@@ -3,6 +3,7 @@ require('dotenv').config()
 const morgan = require('morgan')
 const bodyparser=require('body-parser')
 const path = require('path')
+const cors=require('cors')
 
 const connectDB = require('./server/database/connection')
 

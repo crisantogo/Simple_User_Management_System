@@ -2,7 +2,7 @@ const axios = require('axios')
 
 exports.homeRoutes = (req,res)=>{
     //Make a get request to /api/users
-    axios.get('http://rocky-atoll-58236.herokuapp.com/')
+    axios.get('https://powerful-plains-75111.herokuapp.com/api/users')
     .then(function(response){
         res.render('index', {users:response.data})        
     })
@@ -16,7 +16,7 @@ exports.add_user = (req,res)=>{
 }
 
 exports.update_user = (req,res)=>{
-    axios.get('http://rocky-atoll-58236.herokuapp.com/',{params:{id:req.query.id}})
+    axios.get('https://powerful-plains-75111.herokuapp.com/api/users',{params:{id:req.query.id}})
     .then(function(userdata){
         res.render("update_user",{user:userdata.data})
     })

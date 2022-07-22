@@ -15,7 +15,7 @@ $("#update_user").submit(function(event){
     console.log(data)
 
     var request ={
-        "url":`http://localhost:3000/api/users/${data.id}`,
+        "url":`https://powerful-plains-75111.herokuapp.com/api/users/${data.id}`,
         "method":"PUT",
         "data":data
     }
@@ -32,7 +32,7 @@ if (window.location.pathname=='/'){
         var id = $(this).attr("data-id")
 
         var request ={
-            "url":`http://localhost:3000/api/users/${id}`,
+            "url":`https://powerful-plains-75111.herokuapp.com/api/users/${id}`,
             "method":"DELETE",
             
         }
@@ -40,6 +40,7 @@ if (window.location.pathname=='/'){
         if(confirm("Are you sure you want to dee-lee-tay this record?")){
             $.ajax(request).done(function(response){
                 alert("Data dee-lee-tayed successfully!")
+                location.reload()
             })
         }
     })
